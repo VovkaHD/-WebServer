@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Restaurant List</title>
+        <link rel="stylesheet/less" type="text/css" href="{{ url_for('static', filename='style.less')}}">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+    </head>
+    <body>
+        <div class="title">
+            <h1>Restaurant List</h1>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="messageBox">
+                        {% for message in messages%}
+                            <p>!! {{message}}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            <div class="user">
+                {% if login_session.get('username') %}
+                    <p>{{ login_session.get('username') }}&nbsp;&nbsp;</p>
+                    <a href="{{url_for('gdisconnect')}}">logout</a>
+                {% endif %}
+                {% if login_session.get('username') == None %}
+                    <a href="{{url_for('login')}}">login</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="restaurant_menu">
+
+            <div class="restaurant">
+                <p>Restaurant</p>
+                {% for i in res %}
+                <div class="resList">
+                    <p class="res"><a href="{{url_for('restaurantMenu', id=i.id)}}">{{i.name}}</a></p>
+                    {% if login_session.get('username') %}
+                        <div>
+                            <a href="{{url_for('editRes', id=i.id)}}">Edit</a>
+                            <a href="{{url_for('deleteRes', id=i.id)}}">Delete</a>
+                        </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+                {% if login_session.get('username') %}
+                    <a href="{{url_for('addRes')}}"><button>Add a new restaurant</button></a>
+                {% endif %}
+            </div>
+
+            <div class="menu">
+                <p>Items</p>
+                {% for i in menu %}
+                <div class="menuList">
+                    <p class="res">
+                        <a href="{{url_for('item', id=i.id)}}">{{i.name}}</a>
+                    </p>
+                    <p>{{i.price}}</p>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet/less" type="text/css" href="{{ url_for('static', filename='style.less')}}">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+    <script src="../static/jquery-3.3.1.min.js"> </script>
+</head>
+<body>
+    <a id="githubLogin" href="https://github.com/login/oauth/authorize?client_id=c8ab37b2d9abdacbfd01&scope=user,public_repo">
+        <button>Github Login</button>
+    </a>
+    <p id="result"></p>
+    <script>
+        if (location.search) {
+            $('#githubLogin').hide();
+            $('#result').html('Loading...');
+            $.ajax({
+                type: 'POST',
+                url: '/gconnect?state={{STATE}}',
+                processData: false,
+                contentType: 'application/octet-stream; charset=utf-8',
+                data: location.search.split('=')[1],
+                success: function(result) {
+                    if (result) {
+                        $('#result').html('Login Successful</br>Redirecting...');
+                        setTimeout(function() {
+                            window.location.href="/res"
+                        }, 4000)
+                    }
+                }
+            })
+        }
+    </script>
+</body>
+</html>

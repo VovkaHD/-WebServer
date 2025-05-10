@@ -1,0 +1,49 @@
+{
+  "all_categories": [
+    {
+      "name": "Urban Burger",
+      "menu": [
+        {
+          "name": "Veggie Burger",
+          "description": "Juicy grilled veggie patty with tomato mayo and lettuce",
+          "price": "$7.50"
+        },
+        {
+          "name": "French Fries",
+          "description": "with garlic and parmesan",
+          "price": "$2.99"
+        }
+      ]
+    },
+    {
+      "name": "Super Stir Fry",
+      "menu": [
+        {
+          "name": "Chicken Stir Fry",
+          "description": "With your choice of noodles vegetables and sauces",
+          "price": "$7.99"
+        },
+        {
+          "name": "Veggie Burger",
+          "description": "Juicy grilled veggie patty with tomato mayo and lettuce",
+          "price": "$7.50"
+        }
+      ]
+    },
+    {
+      "name": "Panda Garden",
+      "menu": [
+        {
+          "name": "Pho",
+          "description": "a Vietnamese noodle soup consisting of broth, linguine-shaped rice noodles called banh pho, a few herbs, and meat.",
+          "price": "$8.99"
+        },
+        {
+          "name": "Veggie Burger",
+          "description": "Juicy grilled veggie patty with tomato mayo and lettuce",
+          "price": "$7.50"
+        }
+      ]
+    }
+  ]
+}

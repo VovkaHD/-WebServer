@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Edit menu for {{res.name}}'s {{menu.name}}</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.less')}}">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+    </head>
+    <body>
+        <h1>Edit menu for {{res.name}}'s {{menu.name}}</h1>
+        <form action="{{url_for('edit', res_id=res.id, menu_id=menu.id)}}" method="post">
+            <p>
+                <label>Name:</label>
+                <input type="text" name="name" placeholder="{{menu.name}}">
+            </p>
+            <p>
+                <label>Description:</label>
+                <input type="text" name="description" placeholder="{{menu.description}}">
+            </p>
+            <input type="submit" value="Change Name and Description">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+{% block content %}
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/m.css">
+<div id="what">
+
+
+
+</div>
+{% for i in hm %}
+{% set ii = loop.index0 * 4 %}
+{% if ii == len_hm - 1 %}
+<p>
+<img src="{{ hm[ii] }}" width = "400" height = "400"/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+<p>
+    <a style="position: absolute;
+    left: 15px; text-decoration: none" href="{{ id[ii] }}"> {{ names[ii] }} </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+<p>
+    <a style="position: absolute;
+    left: 15px; text-decoration: none"> {{ ds[ii] }} </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+<p>
+    <a style="position: absolute;
+    left: 15px; text-decoration: none"> {{ prices[ii] }} Руб.</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+{% elif ii == len_hm - 2 %}
+<p>
+<img src="{{ hm[ii] }}" width = "400" height = "400"/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="{{ hm[ii + 1] }}" width = "400" height = "400"/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+<p>
+    <a style="position: absolute;
+    left: 15px; text-decoration: none" href="{{ id[ii] }}"> {{ names[ii] }} </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a style="position: absolute;
+    left: 495px; text-decoration: none" href="{{ id[ii + 1] }}"> {{ names[ii + 1] }} </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+<p>
+    <a style="position: absolute;
+    left: 15px; text-decoration: none"> {{ ds[ii] }} </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a style="position: absolute;
+    left: 495px; text-decoration: none"> {{ ds[ii + 1] }} </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+<p>
+    <a style="position: absolute;
+    left: 15px; text-decoration: none"> {{ prices[ii] }} Руб.</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a style="position: absolute;
+    left: 495px; text-decoration: none"> {{ prices[ii + 1] }} Руб.</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+{% elif ii == len_hm - 3 %}
+<p>
+<img src="{{ hm[ii] }}" width = "400" height = "400"/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="{{ hm[ii + 1] }}" width = "400" height = "400"/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="{{ hm[ii + 2] }}" width = "400" height = "400"/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+<p>
+    <a style="position: absolute;
+    left: 15px; text-decoration: none" href="{{ id[ii] }}"> {{ names[ii] }} </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a style="position: absolute;
+    left: 495px; text-decoration: none" href="{{ id[ii + 1] }}"> {{ names[ii + 1] }} </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a style="position: absolute;
+    left: 970px; text-decoration: none" href="{{ id[ii + 2] }}"> {{ names[ii + 2] }} </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+<p>
+    <a style="position: absolute;
+    left: 15px; text-decoration: none"> {{ ds[ii] }} </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a style="position: absolute;
+    left: 495px; text-decoration: none"> {{ ds[ii + 1] }} </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a style="position: absolute;
+    left: 970px; text-decoration: none"> {{ ds[ii + 2] }} </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+<p>
+    <a style="position: absolute;
+    left: 15px; text-decoration: none"> {{ prices[ii] }} Руб.</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a style="position: absolute;
+    left: 495px; text-decoration: none"> {{ prices[ii + 1] }} Руб.</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a style="position: absolute;
+    left: 970px; text-decoration: none"> {{ prices[ii + 2] }} Руб.</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+{% elif ii < len_hm %}
+<p>
+<img src="{{ hm[ii] }}" width = "400" height = "400"/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="{{ hm[ii + 1] }}" width = "400" height = "400"/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="{{ hm[ii + 2] }}" width = "400" height = "400"/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="{{ hm[ii + 3] }}" width = "400" height = "400"/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+<p>
+    <a style="position: absolute;
+    left: 15px; text-decoration: none" href="{{ id[ii] }}"> {{ names[ii] }} </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a style="position: absolute;
+    left: 495px; text-decoration: none" href="{{ id[ii + 1] }}"> {{ names[ii + 1] }} </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a style="position: absolute;
+    left: 970px; text-decoration: none" href="{{ id[ii + 2] }}"> {{ names[ii + 2] }} </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a style="position: absolute;
+    left: 1440px; text-decoration: none" href="{{ id[ii + 3] }}"> {{ names[ii + 3] }} </a>
+</p>
+<p>
+    <a style="position: absolute;
+    left: 15px; text-decoration: none"> {{ ds[ii] }} </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a style="position: absolute;
+    left: 495px; text-decoration: none"> {{ ds[ii + 1] }} </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a style="position: absolute;
+    left: 970px; text-decoration: none"> {{ ds[ii + 2] }} </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a style="position: absolute;
+    left: 1440px; text-decoration: none"> {{ ds[ii + 3] }} </a>
+</p>
+<p>
+    <a style="position: absolute;
+    left: 15px; text-decoration: none"> {{ prices[ii] }} Руб.</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a style="position: absolute;
+    left: 495px; text-decoration: none"> {{ prices[ii + 1] }} Руб.</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a style="position: absolute;
+    left: 970px; text-decoration: none"> {{ prices[ii + 2] }} Руб.</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a style="position: absolute;
+    left: 1440px; text-decoration: none"> {{ prices[ii + 3] }} Руб.</a>
+</p>
+{% endif %}
+{% endfor %}
+
+<br>
+
+{% endblock %}

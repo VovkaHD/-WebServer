@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <title>Kartiny</title>
+    <h1 style="">Редактирование привилегий пользователей</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email(class="form-control", type="email") }}<br>
+            {% for error in form.email.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.admin_status.label }}<br>
+            {{ form.admin_status(class="form-control", type="") }}<br>
+            {% for error in form.admin_status.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+        <div>{{ message }}</div>
+    </form>
+{% endblock %}
